@@ -1,7 +1,7 @@
 # Changelog
 
-## r1 (2016/04/07)
+### [Check compatibility with Neard](https://github.com/crazy-max/neard/wiki/appWebSVN#latest) before downloading.
 
-This release works since **[Neard 1.0.0](https://github.com/crazy-max/neard/releases/tag/v1.0.0)**
+## r1 (2016/04/07)
 
 * Init repo with WebSVN bundles from [Neard](https://github.com/crazy-max/neard)
