@@ -23,19 +23,16 @@
     <getbundlesrc name="${bundle.name}" version="${bundle.version}" propSrcDest="bundle.srcdest" propSrcFilename="bundle.srcfilename"/>
     
     <propertyregex property="bundle.srcbasename" input="${bundle.srcfilename}" regexp="(.*)\.(.*)" select="\1"/>
-    <if>
-      <not><available file="${bundle.srcdest}/${bundle.srcbasename}/index.php" type="file"/></not>
-      <then>
-        <fail message="File not found: ${bundle.srcdest}/${bundle.srcbasename}/index.php"/>
-      </then>
-    </if>
+    <assertfile file="${bundle.srcdest}/${bundle.srcbasename}/index.php"/>
     
     <delete dir="${bundle.tmp.prep.path}/${bundle.folder}"/>
     <mkdir dir="${bundle.tmp.prep.path}/${bundle.folder}"/>
     <copy todir="${bundle.tmp.prep.path}/${bundle.folder}" overwrite="true">
-      <fileset dir="${bundle.srcdest}/${bundle.srcbasename}" defaultexcludes="yes" excludes="
+      <fileset dir="${bundle.srcdest}/${bundle.srcbasename}" excludes="
         doc/**"
       />
+    </copy>
+    <copy todir="${bundle.tmp.prep.path}/${bundle.folder}" overwrite="true">
       <fileset dir="${bundle.path}" defaultexcludes="yes"/>
     </copy>
   </target>
