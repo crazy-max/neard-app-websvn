@@ -5,7 +5,7 @@ This is a module of [Neard project](https://github.com/neard/neard) involving We
 
 ## Documentation and downloads
 
-http://neard.io/modules/websvn
+https://neard.io/modules/websvn
 
 ## Issues
 
